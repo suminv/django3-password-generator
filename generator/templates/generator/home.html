@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strong Random Password Generator</title>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1>
+        <b>
+        <div id="Logo">
+            <img src="{% static 'generator/logo.png' %}" alt="Secure Random Password Generator" 
+            <div id="LogoText">Secure Random Password Generator</div>
+        </b>
+        </h1>
+    </div>
+    </div>
+    <br>
+    <div class="d-flex justify-content-center">
+        <form action="{% url 'password' %}">
+            <select name="lenght" id="">
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12" selected="selected">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+            </select> Lenght your password
+            <br>
+            <br>
+            <input type="checkbox" name="uppercase" checked> Uppercase
+            <br>
+            <input type="checkbox" name="mumbers"> Numbers
+            <br>
+            <input type="checkbox" name="special"> Special Characters
+            <br>
+            <br>
+            <input type="submit" value="Generate password" class="btn btn-primary">
+            <br>
+            <br>
+            <a href="{% url 'about' %}" class="btn btn-warning">About Page</a>
+    </div>
+    </form>
+
+</body>
+
+
+</html>
